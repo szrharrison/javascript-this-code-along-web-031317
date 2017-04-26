@@ -4,6 +4,9 @@ function Sandwich(bread, ingredients, name) {
   this.bread = bread;
   this.ingredients = ingredients;
   this.name = name;
+  this.describe = function() {
+    console.log("Your " + this.name + " includes: " + this.ingredients.join(", ") + ". Yum!");
+  }
 }
 
 function serve() {
@@ -25,3 +28,6 @@ function deliverFood(customer, table) {
 
 deliverFood.call(gc, "Terry", "4");
 deliverFood.apply(pbj, ["Jesse", "15"]);
+
+serve.call(gc);
+serve.apply(pbj, ["Terry", "Tom", "Tabitha"]);
